@@ -1,0 +1,15 @@
+.reference-image {
+    height: 60px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.reference-container {
+    max-width: 1400px;
+}
+
+.reference-logos {
+    background: #fff;
+}

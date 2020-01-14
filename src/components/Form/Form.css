@@ -1,0 +1,11 @@
+.bg-error, .bg-error:focus {
+    background-color: #ffcac5;
+}
+
+.bg-valid, .bg-valid:focus {
+    background-color: #d8ffd3;
+}
+
+.bg-neutral {
+    background-color: #ffffff;
+}

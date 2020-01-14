@@ -1,0 +1,38 @@
+#speakerInvoice {
+    background-color: #ffffff;
+    color: #000000;
+    display: none;
+}
+
+@media print {
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #speakerInvoice, body #speakerInvoice * {
+        visibility: visible !important;
+    }
+    #speakerInvoice {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 30mm 20mm;
+        background-color: #ffffff;
+        color: #000000 !important;
+        width: 210mm;
+        /* height: 297mm; */
+        height: 282mm;
+        font-size: 11pt;
+        overflow:visible;
+    }
+
+    @page {
+        size: A4; /* DIN A4 standard, Europe */
+        margin:0;
+    }
+
+}

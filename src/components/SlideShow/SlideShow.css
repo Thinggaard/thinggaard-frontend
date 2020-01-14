@@ -1,0 +1,153 @@
+.slider {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 500ms ease-in-out;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: relative;
+}
+
+.slideShowImg {
+    filter: brightness(50%);
+    height: 100%;
+}
+
+.slide-navigation {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.slideshow .slideShowImg {
+    animation-duration: 7s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+.slideshow .legend {
+    position: absolute;
+    top: 18%;
+    text-align: center;
+}
+
+.slide-content {
+    padding-top: 250px;
+    padding-bottom: 100px;
+}
+
+.slideshow .slider-featured h1 {
+    background-color: rgba(15, 139, 13, 0.7);
+    padding: 20px;
+    border-radius: 6px;
+
+}
+
+
+.slideshow .switch i {
+    z-index: 3;
+    cursor: pointer;
+    position: absolute;
+    padding: 8px;
+    font-size: 3rem;
+    opacity: .2;
+
+}
+
+.dot-indicator {
+    transition: color 500ms ease-in-out;
+}
+
+.slideshow .switch i:hover {
+    opacity: 1;
+}
+
+.slideshow h1 {
+    font-weight: 500;
+    text-transform: none;
+    font-size: 42px;
+    letter-spacing: -0.3px;
+}
+
+.slideshow h3
+{
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.slideshow a:hover {
+    color: #fff;
+}
+
+
+.slideshow p {
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+.slideshow a:hover {
+    text-decoration: none;
+}
+
+
+@media only screen and (orientation: landscape) {
+    .slideShowImg {
+        padding-bottom: 42%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .slideshow p {
+        display: none;
+    }
+
+    .slideshow h1 {
+        font-size: 1.5rem;
+    }
+
+    .slideshow h5 {
+        font-size: 1.2rem;
+    }
+
+
+}
+
+@media only screen and (max-width: 1024px) {
+    .slideshow h1 {
+        font-size: 36px;
+    }
+    .slide-content {
+        padding-top: 200px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .slideshow p {
+        display: none;
+    }
+
+    .slideshow h1 {
+        font-size: 26px;
+    }
+
+    .slideshow h3 {
+        font-size: 16px;
+    }
+    .slideshow .legend {
+        width: 100%;
+        bottom: 15%;
+        top: auto;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .slide-content {
+        padding-top: 120px;
+    }
+
+}

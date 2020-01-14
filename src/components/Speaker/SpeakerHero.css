@@ -1,0 +1,169 @@
+
+.speakerHero .speaker-head {
+    padding-top: 200px;
+}
+
+
+.speaker-post-content {
+    text-align: justify;
+    font-weight: 300;
+    line-height: 1.3;
+    font-size: 16px;
+}
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-play-button {
+    font-size: 52px;
+    opacity: 0.8;
+    cursor: pointer;
+    text-shadow: 0 0 5px rgba(20, 20, 20, 0.5);
+}
+
+.page-hero-video-controls {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transition: right 600ms ease-in-out, top 600ms ease-out;
+    transform: translateX(50%);
+    margin-top: -26px;
+    z-index: 11;
+}
+
+
+.page-hero-video-controls.video-playing {
+    right: 52px;
+    top: 52px;
+    z-index: 99;
+    transition: right 600ms ease-out, top 600ms ease-in-out;
+}
+
+.page-hero-video-wrapper {
+    transition: opacity 500ms ease;
+}
+
+.speakerHero {
+    position: relative;
+}
+
+.speaker-post-content.moreToRead {
+    -webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    max-height: 220px;
+    height: 220px;
+    overflow: hidden;
+}
+
+
+.speakerHero .legend {
+    max-width: 550px;
+    padding-left: 8%;
+}
+
+.speakerHero .speaker-head img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 3px;
+    opacity: 0.95;
+}
+
+.page-hero-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.speaker-hero-subtitle-tag {
+    color: #ccc;
+    font-weight: 300;
+}
+
+.speaker-hero-subtitle-tag:before {
+    content: " / ";
+    color: #fff;
+}
+
+.page-hero-readmore {
+    color: #fff;
+    font-weight: 700;
+}
+
+.page-hero {
+    background-size: cover;
+    width: 100%;
+    position: relative;
+}
+
+.page-hero-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 300ms ease-in-out;
+}
+
+.speakerHero h1 {
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.speakerHero p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.speakerHero a:hover {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 1350px) {
+    .speakerHero .speaker-head img {
+        width: 86%;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .speakerHero {
+        padding-top: 55% !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .speakerHero .speaker-head {
+        padding-top: 120px;
+    }
+
+    .speakerHero {
+        padding-top: 15% !important;
+    }
+
+    .page-hero-content {
+        position: static;
+    }
+
+    .speakerHero h1 {
+        font-size: 26px;
+    }
+
+    .speakerHero .speaker-head {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .page-hero-content {
+        position: static;
+    }
+
+    .speakerHero h1 {
+        font-size: 26px;
+    }
+
+    .speakerHero .speaker-head {
+        padding-top: 0;
+    }
+}

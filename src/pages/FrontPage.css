@@ -1,0 +1,7 @@
+@media only screen and (max-width: 640px) {
+    .frontpage-intro-text {
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+}

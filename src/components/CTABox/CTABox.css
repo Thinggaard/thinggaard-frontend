@@ -1,0 +1,13 @@
+.cta-box
+{
+    padding: 0 15px;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+.cta-box .card
+{
+    padding: 30px;
+    background: #0f8b0d;
+    height: 100%;
+}
