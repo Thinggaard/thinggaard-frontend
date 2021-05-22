@@ -98,20 +98,18 @@ const Home = () => {
   return (
     <>
       {destinations && (
-        <form onSubmit={handleSubmit} className="p-2 grid md:grid-cols-3 gap-3">
+        <form onSubmit={handleSubmit} className="p-2 grid md:grid-cols-6 gap-3">
           <DestinationsSelect
             list={destinations.destinations}
             value={destinationId}
             onChange={setdestinationId}
           />
-
           <DurationsSelect
             apiAuthentication={apiAuthentication}
             destinationId={destinationId}
             value={duration}
             onChange={setDuration}
           />
-
           <TransportsSelect
             destinationId={destinationId}
             duration={duration}
@@ -119,7 +117,6 @@ const Home = () => {
             value={transport}
             onChange={setTransport}
           />
-
           <TextField
             label="antal voksne"
             type="number"
@@ -130,37 +127,34 @@ const Home = () => {
               setAdults(e.target.value);
             }}
           />
-
           <DatesSelect
             apiAuthentication={apiAuthentication}
             destinationId={destinationId}
             value={date}
             onChange={setDate}
           />
-
           <Button fullWidth type="submit" variant="outlined">
-            Find Rejse
-          </Button>
+            Find Rejse{" "}
+          </Button>{" "}
         </form>
       )}
-
       {trips && (
         <Link to="/hotel/details" className="p-4 flex flex-col space-y-6 ">
+          {" "}
           {trips.map((trip) => (
             <Trip key={trip.accomodation_code} trip={trip} />
-          ))}
+          ))}{" "}
         </Link>
       )}
-
       {trips === undefined && (
         <div className="m-4 p-3 text-center shadow">
-          <p className="font-bold">Vi kunne desværre ikke finde din rejse</p>
-          <p className="italic">Tjek om din søgning er korrekt</p>
+          <p className="font-bold"> Vi kunne desværre ikke finde din rejse </p>{" "}
+          <p className="italic"> Tjek om din søgning er korrekt </p>{" "}
           <p className="">
-            Eller kontakt os på <a href="tel:70100010">70 10 00 10</a>
-          </p>
+            Eller kontakt os på <a href="tel:70100010"> 70 10 00 10 </a>{" "}
+          </p>{" "}
         </div>
-      )}
+      )}{" "}
     </>
   );
 };
