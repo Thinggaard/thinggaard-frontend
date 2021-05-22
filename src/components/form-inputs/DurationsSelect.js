@@ -1,51 +1,25 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 import { useStyles } from "../../styles";
+import globalContext from "../../context/global/globalContext";
+import { SET_CURRENT_DURATION } from "../../context/types";
 
-const DurationsSelect = ({
-  destinationId,
-  onChange,
-  value,
-  apiAuthentication,
-}) => {
+const DurationsSelect = () => {
   const classes = useStyles();
+  const { durations, currentDuration, dispatch } = useContext(globalContext);
 
-  const [durations, setDurations] = useState(null);
-
-  useEffect(() => {
-    if (!destinationId) {
-      return;
-    }
-    let source = axios.CancelToken.source();
-    const fetch = async () => {
-      if (apiAuthentication) {
-        try {
-          const { data } = await axios.get(
-            `https://thinggaard.dk/wp-json/thinggaard/v1/durations?destination_id=${destinationId.code}&token=${apiAuthentication}`,
-            {
-              cancelToken: source.token,
-            }
-          );
-          setDurations(data.result);
-        } catch (error) {}
-      }
-    };
-    fetch();
-
-    return () => {
-      source.cancel();
-    };
-  }, [destinationId, apiAuthentication]);
   return (
     <FormControl variant="outlined" className={classes.formControl}>
       <InputLabel id="DurationsSelect">DurationsSelect</InputLabel>
       <Select
         id="DurationsSelect"
-        value={value}
+        value={currentDuration}
         label="DurationsSelect"
         onChange={(e) => {
-          onChange(e.target.value);
+          dispatch({
+            type: SET_CURRENT_DURATION,
+            payload: e.target.value,
+          });
         }}
       >
         <MenuItem disabled selected value>

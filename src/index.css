@@ -7,19 +7,18 @@
     @apply leading-tight;
     @apply mb-4;
   }
-}
+  .hotel_beskrivelse > * {
+    @apply hidden;
+  }
 
-.hotel_beskrivelse * {
-  @apply hidden;
-}
+  .hotel_beskrivelse p:first-of-type {
+    @apply block;
+    @apply line-clamp-5;
+  }
 
-.hotel_beskrivelse p:first-of-type {
-  @apply block;
-  @apply line-clamp-5;
-}
-
-iframe {
-  @apply w-full;
+  iframe {
+    @apply w-full;
+  }
 }
 
 .MuiOutlinedInput-adornedEnd {
