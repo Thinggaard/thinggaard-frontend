@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  p {
+    @apply leading-tight;
+    @apply mb-4;
+  }
+}
+
+.hotel_beskrivelse * {
+  @apply hidden;
+}
+
+.hotel_beskrivelse p:first-of-type {
+  @apply block;
+  @apply line-clamp-5;
+}
+
+iframe {
+  @apply w-full;
+}
+
+.MuiOutlinedInput-adornedEnd {
+  padding: 0 !important;
+}
