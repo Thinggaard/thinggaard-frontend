@@ -1,56 +1,51 @@
 {
-  "name": "youandx-react",
+  "name": "thinggaard-test",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.9.4",
-    "@material-ui/lab": "^3.0.0-alpha.30",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "axios": "^0.18.1",
-    "babel-types": "^6.26.0",
-    "date-fns": "^2.9.0",
-    "html-react-parser": "^0.7.1",
-    "moment": "^2.24.0",
-    "moment-timezone": "^0.5.27",
-    "prerender-node": "^3.2.5",
-    "query-string": "^6.9.0",
-    "react": "^16.12.0",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-app-polyfill": "^1.0.5",
-    "react-datepicker": "^2.10.1",
-    "react-dom": "^16.12.0",
-    "react-facebook-pixel": "^0.1.3",
-    "react-ga": "^2.7.0",
-    "react-gtm-module": "^2.0.8",
-    "react-helmet": "^5.2.1",
-    "react-helmet-async": "^1.0.4",
-    "react-icons": "^3.8.0",
-    "react-number-format": "^4.3.1",
-    "react-player": "^1.14.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0",
-    "react-select": "^2.4.4",
-    "react-touch-events": "^2.1.0",
-    "react-visibility-sensor": "^5.1.1",
-    "underscore": "^1.9.2",
-    "universal-cookie": "^4.0.3",
-    "validator": "^11.1.0",
-    "webfontloader": "^1.6.28"
+    "@craco/craco": "^6.1.2",
+    "@date-io/date-fns": "^1.3.13",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/pickers": "^3.3.10",
+    "@tailwindcss/line-clamp": "^0.2.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "date-fns": "^2.21.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+  }
 }

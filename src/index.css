@@ -1,14 +1,27 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  p {
+    @apply leading-tight;
+    @apply mb-4;
+  }
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.hotel_beskrivelse * {
+  @apply hidden;
+}
+
+.hotel_beskrivelse p:first-of-type {
+  @apply block;
+  @apply line-clamp-5;
+}
+
+iframe {
+  @apply w-full;
+}
+
+.MuiOutlinedInput-adornedEnd {
+  padding: 0 !important;
 }
