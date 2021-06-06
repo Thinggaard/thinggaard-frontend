@@ -1,43 +1,51 @@
-import { Button, TextField } from "@material-ui/core";
+import { Button, FormControl } from "@material-ui/core";
 import { useContext } from "react";
 import DatesSelect from "../components/form-inputs/DatesSelect";
 import DestinationsSelect from "../components/form-inputs/DestinationsSelect";
 import DurationsSelect from "../components/form-inputs/DurationsSelect";
 import TransportsSelect from "../components/form-inputs/TransportsSelect";
+import AdultsSelect from "../components/form-inputs/AdultsSelect";
+import ChildrenSelect from "../components/form-inputs/ChildrenSelect";
 import Trip from "../components/Trip";
 import { useStyles } from "../styles";
 import globalContext from "../context/global/globalContext";
-import { SET_ADULTS } from "../context/types";
 
 const Home = () => {
   const classes = useStyles();
-  const { destinations, handleSubmit, adults, dispatch, trips } =
+  const { destinations, currentDestination, handleSubmit, trips } =
     useContext(globalContext);
 
   return (
     <>
       {destinations && (
-        <form onSubmit={handleSubmit} className="p-2 grid md:grid-cols-3 gap-3">
-          <DestinationsSelect />
-          <DurationsSelect />
-          <TransportsSelect />
-          <TextField
-            label="antal voksne"
-            type="number"
-            variant="outlined"
-            className={classes.formControl}
-            value={adults}
-            onChange={(e) => {
-              dispatch({
-                type: SET_ADULTS,
-                payload: e.target.value,
-              });
-            }}
-          />
-          <DatesSelect />
-          <Button fullWidth type="submit" variant="outlined">
-            Find Rejse
-          </Button>
+        <form onSubmit={handleSubmit}>
+          <div className="grid grid-cols-11 p-2 gap-4">
+            <DestinationsSelect className="col-span-2" />
+            <DurationsSelect
+              disabled={currentDestination ? false : true}
+              className="col-span-2"
+            />
+            <TransportsSelect
+              className="col-span-2"
+              disabled={currentDestination ? false : true}
+            />
+            <DatesSelect
+              disabled={currentDestination ? false : true}
+              className="col-span-2"
+            />
+            <AdultsSelect className="" />
+            <ChildrenSelect className="" />
+            <FormControl className="">
+              <Button
+                size="large"
+                color="primary"
+                type="submit"
+                variant="contained"
+              >
+                Find Rejse
+              </Button>
+            </FormControl>
+          </div>
         </form>
       )}
 

@@ -4,14 +4,18 @@ import globalContext from "../../context/global/globalContext";
 import { SET_CURRENT_TRANSPORT } from "../../context/types";
 import { useStyles } from "../../styles";
 
-const TransportsSelect = () => {
+const TransportsSelect = (props) => {
   const classes = useStyles();
   const { transports, currentTransport, dispatch } = useContext(globalContext);
 
   return (
     <>
-      <FormControl variant="outlined" className={classes.formControl}>
-        <InputLabel id="label-transport">Transport</InputLabel>
+      <FormControl
+        variant="outlined"
+        className={[props.className, classes.formControl]}
+        disabled={props.disabled}
+      >
+        <InputLabel id="label-transport">Transportform</InputLabel>
         <Select
           labelId="label-transport"
           label="transport"
@@ -26,7 +30,7 @@ const TransportsSelect = () => {
           }}
         >
           <MenuItem value={false} disabled>
-            -- select an option --
+            -- Vælg transportform --
           </MenuItem>
 
           {transports?.map((item) => (

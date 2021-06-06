@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import {
   KeyboardDatePicker,
   MuiPickersUtilsProvider,
@@ -9,7 +9,7 @@ import { useStyles } from "../../styles";
 import globalContext from "../../context/global/globalContext";
 import { SET_CURRENT_DATE } from "../../context/types";
 
-const DatesSelect = () => {
+const DatesSelect = (props) => {
   const classes = useStyles();
   const { dates, currentDate, dispatch } = useContext(globalContext);
 
@@ -33,15 +33,23 @@ const DatesSelect = () => {
     }
   };
 
+  const [pickerStatus, setPickerStatus] = useState(false);
+
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <KeyboardDatePicker
+        onClick={props.disabled ? () => {} : () => setPickerStatus(true)}
+        onClose={() => setPickerStatus(false)}
+        open={pickerStatus}
+        disabled={props.disabled}
         disableToolbar
         shouldDisableDate={disableDays}
-        className={classes.formControl}
+        className={[props.className, classes.formControl]}
         clearable
+        autoOk={true}
+        animateYearScrolling={true}
         value={currentDate}
-        label="Vælg dato"
+        label="Dato"
         onChange={(date) => {
           dispatch({
             type: SET_CURRENT_DATE,

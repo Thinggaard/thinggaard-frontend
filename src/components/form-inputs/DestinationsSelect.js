@@ -4,14 +4,14 @@ import globalContext from "../../context/global/globalContext";
 import { SET_CURRENT_DESTINATION } from "../../context/types";
 import { useStyles } from "../../styles";
 
-const DestinationsSelect = () => {
+const DestinationsSelect = (props) => {
   const classes = useStyles();
   const { destinations, currentDestination, dispatch } =
     useContext(globalContext);
 
   return (
-    <FormControl variant="outlined" className={classes.formControl}>
-      <InputLabel id="destinations">destinations</InputLabel>
+    <FormControl variant="outlined" className={[props.className]}>
+      <InputLabel id="destinations">Rejsemål</InputLabel>
       <Select
         id="destinations"
         value={currentDestination}
@@ -24,7 +24,7 @@ const DestinationsSelect = () => {
         }}
       >
         <MenuItem disabled selected value>
-          -- select an option --
+          -- Vælg et rejsemål --
         </MenuItem>
         {destinations?.map((item) => {
           return (

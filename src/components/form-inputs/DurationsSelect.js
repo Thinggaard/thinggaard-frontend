@@ -4,13 +4,17 @@ import { useStyles } from "../../styles";
 import globalContext from "../../context/global/globalContext";
 import { SET_CURRENT_DURATION } from "../../context/types";
 
-const DurationsSelect = () => {
+const DurationsSelect = (props) => {
   const classes = useStyles();
   const { durations, currentDuration, dispatch } = useContext(globalContext);
 
   return (
-    <FormControl variant="outlined" className={classes.formControl}>
-      <InputLabel id="DurationsSelect">DurationsSelect</InputLabel>
+    <FormControl
+      variant="outlined"
+      className={[props.className, classes.formControl]}
+      disabled={props.disabled}
+    >
+      <InputLabel id="DurationsSelect">Rejselængde</InputLabel>
       <Select
         id="DurationsSelect"
         value={currentDuration}
@@ -23,7 +27,7 @@ const DurationsSelect = () => {
         }}
       >
         <MenuItem disabled selected value>
-          -- select an option --
+          -- Vælg rejselængde --
         </MenuItem>
         {durations?.map((duration, index) => (
           <MenuItem key={index} value={duration.days}>

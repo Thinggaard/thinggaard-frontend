@@ -9,6 +9,7 @@ import {
   SET_COUNTRIES,
   SET_DURATIONS,
   SET_TRANSPORTS,
+  SET_ADULTS,
   SET_DATES,
   SET_TRIPS,
 } from "../types";
@@ -27,6 +28,7 @@ const GlobalState = (props) => {
     transports: null,
     currentTransport: "",
     adults: 2,
+    children: 0,
     dates: [new Date()],
     currentDate: null,
     trips: null,
@@ -216,6 +218,7 @@ const GlobalState = (props) => {
         transports: state.transports,
         currentTransport: state.currentTransport,
         adults: state.adults,
+        children: state.children,
         dates: state.dates,
         currentDate: state.currentDate,
         trips: state.trips,
