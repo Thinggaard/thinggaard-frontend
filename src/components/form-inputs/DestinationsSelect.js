@@ -30,9 +30,9 @@ const DestinationsSelect = (props) => {
         <MenuItem disabled selected value>
           -- Vælg et rejsemål --
         </MenuItem>
-        {destinations?.map((item) => {
+        {destinations?.map((item, key) => {
           return (
-            <MenuItem key={item.id} value={item}>
+            <MenuItem key={key} value={item}>
               {item.name}
             </MenuItem>
           );

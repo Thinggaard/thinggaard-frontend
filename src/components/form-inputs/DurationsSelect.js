@@ -30,9 +30,9 @@ const DurationsSelect = (props) => {
         <MenuItem disabled selected value>
           -- Vælg rejselængde --
         </MenuItem>
-        {durations?.map((duration, index) => (
-          <MenuItem key={index} value={duration.days}>
-            {duration.days}
+        {durations?.map((duration, key) => (
+          <MenuItem key={key} value={duration.days}>
+            {duration.days} dage
           </MenuItem>
         ))}
       </Select>

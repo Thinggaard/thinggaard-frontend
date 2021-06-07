@@ -146,21 +146,23 @@ const GlobalState = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    var childrenFiltered = state.childrenAges.filter(function (el) {
-      return el != null;
-    });
+    const childrenFiltered = state.children
+      ? state.childrenAges.filter(function (el) {
+          return el != null;
+        })
+      : [];
 
+    const adultsFiltered = countAdults(state.adults);
+
+    const allAges =
+      childrenFiltered && childrenFiltered.length
+        ? adultsFiltered + "," + childrenFiltered.slice(0, state.children)
+        : adultsFiltered;
+
+    console.log(allAges);
     try {
       const { data } = await axios.get(
-        `https://thinggaard.dk/wp-json/thinggaard/v1/trips?destination_id=${
-          state.currentDestination.code
-        }&ages=${countAdults(state.adults)}${
-          childrenFiltered
-            ? "," + childrenFiltered.slice(0, state.children)
-            : false
-        }&duration=${state.currentDuration}&date=${
-          state.currentDate
-        }&transport=${state.currentTransport}&token=${state.token}}`
+        `https://thinggaard.dk/wp-json/thinggaard/v1/trips?destination_id=${state.currentDestination.code}&ages=${allAges}&duration=${state.currentDuration}&date=${state.currentDate}&transport=${state.currentTransport}&token=${state.token}}`
       );
       console.log(
         "🚀 ~ file: GlobalState.js ~ line 155 ~ handleSubmit ~ data",

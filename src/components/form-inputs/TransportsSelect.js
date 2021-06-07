@@ -16,12 +16,10 @@ const TransportsSelect = (props) => {
         disabled={props.disabled}
         style={props.style}
       >
-        <InputLabel id="label-transport">Transportform</InputLabel>
+        <InputLabel id="TransportsSelect">Transportform</InputLabel>
         <Select
-          labelId="label-transport"
-          label="transport"
-          id="select-transport"
-          displayEmpty
+          label="TransportsSelect"
+          id="TransportsSelect"
           value={currentTransport}
           onChange={(e) => {
             dispatch({
@@ -30,16 +28,17 @@ const TransportsSelect = (props) => {
             });
           }}
         >
-          <MenuItem value={false} disabled>
+          <MenuItem value={false} selected disabled>
             -- Vælg transportform --
           </MenuItem>
 
-          {transports?.map((item) => (
-            <MenuItem
-              key={item.transport_category_id}
-              value={item.transport_category_id}
-            >
-              {item.transport_category_name}
+          {transports?.map((item, key) => (
+            <MenuItem key={key} value={item.transport_category_id}>
+              {item.transport_category_name.toLowerCase() === "car" && <>Bil</>}
+              {item.transport_category_name.toLowerCase() === "bus" && <>Bus</>}
+              {item.transport_category_name.toLowerCase() === "flight" && (
+                <>Fly</>
+              )}
             </MenuItem>
           ))}
         </Select>
