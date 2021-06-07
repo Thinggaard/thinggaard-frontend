@@ -23,27 +23,36 @@ const Home = () => {
             className="p-4 gap-4"
             style={{ display: "flex", justifyContent: "space-between" }}
           >
-            <DestinationsSelect style={{ flex: "6" }} />
+            <DestinationsSelect style={{ flex: "5" }} />
             <DurationsSelect
               disabled={currentDestination ? false : true}
-              style={{ flex: "4" }}
+              style={{ flex: "3" }}
             />
             <TransportsSelect
               disabled={currentDestination ? false : true}
-              style={{ flex: "4" }}
+              style={{ flex: "3" }}
             />
             <DatesSelect
               disabled={currentDestination ? false : true}
-              style={{ flex: "4" }}
+              style={{ flex: "3" }}
             />
-            <AdultsSelect style={{ flex: "2" }} />
-            <ChildrenSelect style={{ flex: "2" }} />
-            <FormControl style={{ flex: "4" }}>
+            <AdultsSelect
+              style={{
+                flex: "3",
+              }}
+            />
+            <ChildrenSelect
+              style={{
+                flex: "3",
+              }}
+            />
+            <FormControl style={{ flex: "3" }}>
               <Button
                 size="large"
                 color="primary"
                 type="submit"
                 variant="contained"
+                style={{ minHeight: "56px" }}
               >
                 Find Rejse
               </Button>

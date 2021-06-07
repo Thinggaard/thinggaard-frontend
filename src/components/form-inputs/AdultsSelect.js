@@ -11,24 +11,33 @@ const AdultsSelect = (props) => {
   return (
     <>
       <FormControl variant="outlined" style={props.style}>
-        <Typography id="adults-slider-label" gutterBottom>
-          Antal voksne: {adults}
-        </Typography>
-        <Slider
-          aria-labelledby="adults-slider-label"
-          step={1}
-          min={1}
-          max={20}
-          marks
-          defaultValue={adults}
-          valueLabelDisplay="off"
-          onChange={(e, newvalue) => {
-            dispatch({
-              type: SET_ADULTS,
-              payload: newvalue,
-            });
+        <div
+          className="form-wrap"
+          style={{
+            padding: "0 20px",
+            borderRadius: "5px",
+            border: "1px solid #bbb",
           }}
-        />
+        >
+          <Typography id="adults-slider-label" variant="body2">
+            Antal voksne: {adults}
+          </Typography>
+          <Slider
+            aria-labelledby="adults-slider-label"
+            step={1}
+            min={1}
+            max={10}
+            marks
+            defaultValue={adults}
+            valueLabelDisplay="off"
+            onChange={(e, newvalue) => {
+              dispatch({
+                type: SET_ADULTS,
+                payload: newvalue,
+              });
+            }}
+          />
+        </div>
       </FormControl>
     </>
   );
