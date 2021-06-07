@@ -52,8 +52,8 @@ const Home = () => {
         </form>
       )}
 
-      {trips?.map((trip) => (
-        <Trip key={trip.accomodation_code} trip={trip} />
+      {trips?.map((trip, key) => (
+        <Trip key={key} trip={trip} />
       ))}
 
       {trips === undefined && (

@@ -15,6 +15,7 @@ const DestinationsSelect = (props) => {
       <Select
         id="destinations"
         label="destinations"
+        value={currentDestination ? currentDestination : ""}
         onChange={(e) => {
           dispatch({
             type: SET_CURRENT_DESTINATION,
@@ -22,7 +23,7 @@ const DestinationsSelect = (props) => {
           });
         }}
       >
-        <MenuItem disabled selected value>
+        <MenuItem disabled selected>
           -- Vælg et rejsemål --
         </MenuItem>
         {destinations?.map((item, key) => {

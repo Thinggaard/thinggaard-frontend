@@ -17,7 +17,7 @@ const Trip = ({ trip }) => {
   }
 
   return (
-    <div className="m-4 shadow  md:flex">
+    <div className="m-4 shadow flex">
       <CarouselComponent images={post.meta.gallery_settings} />
       <Link to="/hotel/details" className="block md:w-7/12">
         <div div className="p-3 ">

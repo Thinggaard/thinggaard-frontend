@@ -9,8 +9,9 @@ const CarouselComponent = ({ images }) => {
       showIndicators={false}
       showThumbs={false}
     >
-      {images?.map((img) => (
+      {images?.map((img, key) => (
         <div
+          key={key}
           className="w-full h-52 md:h-64 bg-cover bg-center"
           style={{
             backgroundImage: `url(${img.url})`,
