@@ -13,6 +13,7 @@ const DurationsSelect = (props) => {
       variant="outlined"
       className={[props.className, classes.formControl]}
       disabled={props.disabled}
+      style={props.style}
     >
       <InputLabel id="DurationsSelect">Rejselængde</InputLabel>
       <Select

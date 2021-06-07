@@ -45,6 +45,7 @@ const DatesSelect = (props) => {
         disableToolbar
         shouldDisableDate={disableDays}
         className={[props.className, classes.formControl]}
+        style={props.style}
         clearable
         autoOk={true}
         animateYearScrolling={true}

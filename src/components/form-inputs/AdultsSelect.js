@@ -12,6 +12,7 @@ const AdultsSelect = (props) => {
     <>
       <FormControl
         variant="outlined"
+        style={props.style}
         className={[props.className, classes.formControl]}
       >
         <Typography id="adults-slider-label" gutterBottom>

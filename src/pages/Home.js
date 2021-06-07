@@ -19,23 +19,29 @@ const Home = () => {
     <>
       {destinations && (
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-11 p-2 gap-4">
-            <DestinationsSelect className="col-span-2" />
+          <div
+            className="p-4 gap-4"
+            style={{ display: "flex", justifyContent: "space-between" }}
+          >
+            <DestinationsSelect className="" style={{ flex: "3" }} />
             <DurationsSelect
               disabled={currentDestination ? false : true}
-              className="col-span-2"
+              className=""
+              style={{ flex: "2" }}
             />
             <TransportsSelect
-              className="col-span-2"
+              className=""
               disabled={currentDestination ? false : true}
+              style={{ flex: "2" }}
             />
             <DatesSelect
               disabled={currentDestination ? false : true}
-              className="col-span-2"
+              className=""
+              style={{ flex: "2" }}
             />
-            <AdultsSelect className="" />
-            <ChildrenSelect className="" />
-            <FormControl className="">
+            <AdultsSelect className="" style={{ flex: "1" }} />
+            <ChildrenSelect className="" style={{ flex: "1" }} />
+            <FormControl className="" style={{ flex: "2" }}>
               <Button
                 size="large"
                 color="primary"

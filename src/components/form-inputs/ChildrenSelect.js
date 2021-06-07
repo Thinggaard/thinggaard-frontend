@@ -1,12 +1,12 @@
 import { FormControl, Typography, Slider, TextField } from "@material-ui/core";
 import React, { useContext } from "react";
 import globalContext from "../../context/global/globalContext";
-import { SET_CHILDREN } from "../../context/types";
+import { SET_CHILDREN, SET_CHILDREN_AGES } from "../../context/types";
 import { useStyles } from "../../styles";
 
 const ChildrenSelect = (props) => {
   const classes = useStyles();
-  const { children, dispatch } = useContext(globalContext);
+  const { children, childrenAges, dispatch } = useContext(globalContext);
 
   const countChildren = (number) => {
     let myChildren = [];
@@ -20,6 +20,7 @@ const ChildrenSelect = (props) => {
     <>
       <FormControl
         variant="outlined"
+        style={props.style}
         className={[props.className, classes.formControl]}
       >
         <Typography id="Children-slider-label" gutterBottom>
@@ -31,7 +32,6 @@ const ChildrenSelect = (props) => {
           min={0}
           max={10}
           marks
-          defaultValue={children}
           valueLabelDisplay="off"
           onChange={(e, newvalue) => {
             dispatch({
@@ -45,15 +45,19 @@ const ChildrenSelect = (props) => {
             <div className="mb-2">
               <TextField
                 fullWidth
-                label={"Barn " + (count + 1) + " alder ved afrejse"}
+                size="small"
+                label={"Barn " + (count + 1) + " alder"}
                 type="number"
-                inputProps={{ style: { fontSize: 11 } }} // font size of input text
+                inputProps={{ style: { fontSize: 13 } }} // font size of input text
                 InputLabelProps={{ style: { fontSize: 11 } }} // font size of input label
                 variant="outlined"
-                onChange={(e) => {
+                value={childrenAges[count] ? childrenAges[count] : false}
+                onChange={(myEvent) => {
+                  childrenAges[count] = myEvent.target.value;
+                  console.log(childrenAges);
                   dispatch({
-                    type: SET_CHILDREN,
-                    payload: e.target.value,
+                    type: SET_CHILDREN_AGES,
+                    payload: childrenAges,
                   });
                 }}
               />

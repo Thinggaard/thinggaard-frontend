@@ -10,6 +10,8 @@ import {
   SET_DURATIONS,
   SET_TRANSPORTS,
   SET_ADULTS,
+  SET_CHILDREN,
+  SET_CHILDREN_AGES,
   SET_DATES,
   SET_TRIPS,
 } from "../types";
@@ -29,6 +31,7 @@ const GlobalState = (props) => {
     currentTransport: "",
     adults: 2,
     children: 0,
+    childrenAges: [],
     dates: [new Date()],
     currentDate: null,
     trips: null,
@@ -143,15 +146,21 @@ const GlobalState = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    var childrenFiltered = state.childrenAges.filter(function (el) {
+      return el != null;
+    });
+
     try {
       const { data } = await axios.get(
         `https://thinggaard.dk/wp-json/thinggaard/v1/trips?destination_id=${
           state.currentDestination.code
-        }&ages=${countAdults(state.adults)}&duration=${
-          state.currentDuration
-        }&date=${state.currentDate}&transport=${state.currentTransport}&token=${
-          state.token
-        }}`
+        }&ages=${countAdults(state.adults)}${
+          childrenFiltered
+            ? "," + childrenFiltered.slice(0, state.children)
+            : false
+        }&duration=${state.currentDuration}&date=${
+          state.currentDate
+        }&transport=${state.currentTransport}&token=${state.token}}`
       );
       console.log(
         "🚀 ~ file: GlobalState.js ~ line 155 ~ handleSubmit ~ data",
@@ -219,6 +228,7 @@ const GlobalState = (props) => {
         currentTransport: state.currentTransport,
         adults: state.adults,
         children: state.children,
+        childrenAges: state.childrenAges,
         dates: state.dates,
         currentDate: state.currentDate,
         trips: state.trips,

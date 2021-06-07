@@ -14,6 +14,7 @@ const TransportsSelect = (props) => {
         variant="outlined"
         className={[props.className, classes.formControl]}
         disabled={props.disabled}
+        style={props.style}
       >
         <InputLabel id="label-transport">Transportform</InputLabel>
         <Select

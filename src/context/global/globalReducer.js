@@ -11,6 +11,7 @@ import {
   SET_CURRENT_TRANSPORT,
   SET_ADULTS,
   SET_CHILDREN,
+  SET_CHILDREN_AGES,
   SET_DATES,
   SET_CURRENT_DATE,
   SET_TRIPS,
@@ -81,6 +82,11 @@ const globalReducer = (state, action) => {
       return {
         ...state,
         children: action.payload,
+      };
+    case SET_CHILDREN_AGES:
+      return {
+        ...state,
+        childrenAges: action.payload,
       };
     case SET_DATES:
       return {

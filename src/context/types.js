@@ -10,6 +10,7 @@ export const SET_TRANSPORTS = "SET_TRANSPORTS";
 export const SET_CURRENT_TRANSPORT = "SET_CURRENT_TRANSPORT";
 export const SET_ADULTS = "SET_ADULTS";
 export const SET_CHILDREN = "SET_CHILDREN";
+export const SET_CHILDREN_AGES = "SET_CHILDREN_AGES";
 export const SET_DATES = "SET_DATES";
 export const SET_CURRENT_DATE = "SET_CURRENT_DATE";
 export const SET_TRIPS = "SET_TRIPS";
