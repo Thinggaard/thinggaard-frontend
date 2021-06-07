@@ -12,7 +12,6 @@ const TransportsSelect = (props) => {
     <>
       <FormControl
         variant="outlined"
-        className={[props.className, classes.formControl]}
         disabled={props.disabled}
         style={props.style}
       >

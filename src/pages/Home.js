@@ -23,25 +23,22 @@ const Home = () => {
             className="p-4 gap-4"
             style={{ display: "flex", justifyContent: "space-between" }}
           >
-            <DestinationsSelect className="" style={{ flex: "6" }} />
+            <DestinationsSelect style={{ flex: "6" }} />
             <DurationsSelect
               disabled={currentDestination ? false : true}
-              className=""
               style={{ flex: "4" }}
             />
             <TransportsSelect
-              className=""
               disabled={currentDestination ? false : true}
               style={{ flex: "4" }}
             />
             <DatesSelect
               disabled={currentDestination ? false : true}
-              className=""
               style={{ flex: "4" }}
             />
-            <AdultsSelect className="" style={{ flex: "2" }} />
-            <ChildrenSelect className="" style={{ flex: "2" }} />
-            <FormControl className="" style={{ flex: "4" }}>
+            <AdultsSelect style={{ flex: "2" }} />
+            <ChildrenSelect style={{ flex: "2" }} />
+            <FormControl style={{ flex: "4" }}>
               <Button
                 size="large"
                 color="primary"

@@ -11,7 +11,6 @@ const DurationsSelect = (props) => {
   return (
     <FormControl
       variant="outlined"
-      className={[props.className, classes.formControl]}
       disabled={props.disabled}
       style={props.style}
     >

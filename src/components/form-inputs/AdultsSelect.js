@@ -10,11 +10,7 @@ const AdultsSelect = (props) => {
 
   return (
     <>
-      <FormControl
-        variant="outlined"
-        style={props.style}
-        className={[props.className, classes.formControl]}
-      >
+      <FormControl variant="outlined" style={props.style}>
         <Typography id="adults-slider-label" gutterBottom>
           Antal voksne: {adults}
         </Typography>

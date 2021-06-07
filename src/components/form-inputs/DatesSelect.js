@@ -44,7 +44,6 @@ const DatesSelect = (props) => {
         disabled={props.disabled}
         disableToolbar
         shouldDisableDate={disableDays}
-        className={[props.className, classes.formControl]}
         style={props.style}
         clearable
         autoOk={true}

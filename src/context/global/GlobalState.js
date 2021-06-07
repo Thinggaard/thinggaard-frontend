@@ -51,9 +51,7 @@ const GlobalState = (props) => {
         type: SET_TOKEN,
         payload: data.result.auth_token,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const fetchDestinations = async (source) => {
@@ -76,9 +74,7 @@ const GlobalState = (props) => {
         type: SET_COUNTRIES,
         payload: data.countries,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const fetchDurations = async (source) => {
@@ -96,9 +92,7 @@ const GlobalState = (props) => {
         type: SET_DURATIONS,
         payload: data.result,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const fetchTransports = async (source) => {
@@ -113,9 +107,7 @@ const GlobalState = (props) => {
         type: SET_TRANSPORTS,
         payload: data.result,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const fetchDates = async (source) => {
@@ -130,9 +122,7 @@ const GlobalState = (props) => {
         type: SET_DATES,
         payload: data.result,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   const countAdults = (number) => {
@@ -159,22 +149,15 @@ const GlobalState = (props) => {
         ? adultsFiltered + "," + childrenFiltered.slice(0, state.children)
         : adultsFiltered;
 
-    console.log(allAges);
     try {
       const { data } = await axios.get(
         `https://thinggaard.dk/wp-json/thinggaard/v1/trips?destination_id=${state.currentDestination.code}&ages=${allAges}&duration=${state.currentDuration}&date=${state.currentDate}&transport=${state.currentTransport}&token=${state.token}}`
-      );
-      console.log(
-        "🚀 ~ file: GlobalState.js ~ line 155 ~ handleSubmit ~ data",
-        data
       );
       dispatch({
         type: SET_TRIPS,
         payload: data.result,
       });
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   // useEffects

@@ -10,15 +10,10 @@ const DestinationsSelect = (props) => {
     useContext(globalContext);
 
   return (
-    <FormControl
-      variant="outlined"
-      className={[props.className]}
-      style={props.style}
-    >
+    <FormControl variant="outlined" style={props.style}>
       <InputLabel id="destinations">Rejsemål</InputLabel>
       <Select
         id="destinations"
-        value={currentDestination}
         label="destinations"
         onChange={(e) => {
           dispatch({
